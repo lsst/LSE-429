@@ -1,0 +1,56 @@
+\addtocounter{table}{-1}
+\begin{longtable}{|l|p{0.8\textwidth}|}\hline
+\textbf{Acronym} & \textbf{Description}  \\\hline
+
+AP & Alert Production \\\hline
+Alert Production & The principal component of Prompt Processing that processes and calibrates incoming images, performs Difference Image Analysis to identify DIASources and DIAObjects, packages and distributes the resulting Alerts, and runs the Moving Object Processing System. \\\hline
+Baseline & The point at which project designs or requirements are considered to be 'frozen' and after which all changes must be traced and approved \\\hline
+Butler & A middleware component for persisting and retrieving image datasets (raw or processed), calibration reference data, and catalogs. \\\hline
+CCD & Charge-Coupled Device \\\hline
+Camera & The LSST subsystem responsible for the 3.2-gigapixel LSST camera, which will take more than 800 panoramic images of the sky every night. SLAC leads a consortium of Department of Energy laboratories to design and build the camera sensors, optics, electronics, cryostat, filters and filter exchange mechanism, and camera control system. \\\hline
+Commissioning & A two-year phase at the end of the Construction project during which a technical team a) integrates the various technical components of the three subsystems; b) shows their compliance with ICDs and system-level requirements as detailed in the LSST Observatory System Specifications document (OSS, LSE-30); and c) performs science verification to show compliance with the survey performance specifications as detailed in the LSST Science Requirements Document (SRD, LPM-17). \\\hline
+DAQ & Data Acquisition System \\\hline
+DIASource & A DIASource is a detection with signal-to-noise ratio greater than 5 in a difference image. \\\hline
+DIMM & Differential Image Motion Monitor \\\hline
+DM & Data Management \\\hline
+DMS & Data Management Subsystem \\\hline
+DRP & Data Release Production \\\hline
+Data Management & The LSST Subsystem responsible for the Data Management System (DMS), which will capture, store, catalog, and serve the LSST dataset to the scientific community and public. The DM team is responsible for the DMS architecture, applications, middleware, infrastructure, algorithms, and Observatory Network Design. DM is a distributed team working at LSST and partner institutions, with the DM Subsystem Manager located at LSST headquarters in Tucson. \\\hline
+Data Management Subsystem & The subsystems within Data Management may contain a defined combination of hardware, a software stack, a set of running processes, and the people who manage them: they are a major component of the DM System operations. Examples include the 'Archive Operations Subsystem' and the 'Data Processing Subsystem'"." \\\hline
+Data Management System & The computing infrastructure, middleware, and applications that process, store, and enable information extraction from the LSST dataset; the DMS will process peta-scale data volume, convert raw images into a faithful representation of the universe, and archive the results in a useful form. The infrastructure layer consists of the computing, storage, networking hardware, and system software. The middleware layer handles distributed processing, data access, user interface, and system operations services. The applications layer includes the data pipelines and the science data archives' products and services. \\\hline
+Document & Any object (in any application supported by DocuShare or design archives such as PDMWorks or GIT) that supports project management or records milestones and deliverables of the LSST Project \\\hline
+FWHM & Full Width at Half-Maximum \\\hline
+LSR & LSST System Requirements; LSE-29 \\\hline
+LSST & Large Synoptic Survey Telescope \\\hline
+MOPS & Moving Object Processing System \\\hline
+OSS & Observatory System Specifications; LSE-30 \\\hline
+OpSim & Operations Simulation \\\hline
+PSF & Point Spread Function \\\hline
+RA & Right Ascension \\\hline
+RMS & Root-Mean-Square \\\hline
+SED & Spectral Energy Distribution \\\hline
+SV & Science Validation \\\hline
+Source & A single detection of an astrophysical object in an image, the characteristics for which are stored in the Source Catalog of the DRP database. The association of Sources that are non-moving lead to Objects; the association of moving Sources leads to Solar System Objects. (Note that in non-LSST usage "source" is often used for what LSST calls an Object.) \\\hline
+Verification & The process of evaluating the design, including hardware and software - to ensure the requirements have been met;  verification (of requirements) is performed by test, analysis, inspection, and/or demonstration \\\hline
+WCS & World Coordinate System \\\hline
+airmass & The pathlength of light from an astrophysical source through the Earth's atmosphere. It is given approximately by sec z, where z is the angular distance from the zenith (the point directly overhead, where airmass = 1.0) to the source. \\\hline
+algorithm & A computational implementation of a calculation or some method of processing. \\\hline
+arcsec & arcsecond second of arc (unit of angle) \\\hline
+astrometry & In astronomy, the sub-discipline of astrometry concerns precision measurement of positions (at a reference epoch), and real and apparent motions of astrophysical objects. Real motion means 3-D motions of the object with respect to an inertial reference frame; apparent motions are an artifact of the motion of the Earth. Astrometry per se is sometimes confused with the act of determining a World Coordinate System (WCS), which is a functional characterization of the mapping from pixels in an image or spectrum to world coordinate such as (RA, Dec) or wavelength. \\\hline
+calibration & The process of translating signals produced by a measuring instrument such as a telescope and camera into physical units such as flux, which are used for scientific analysis. Calibration removes most of the contributions to the signal from environmental and instrumental factors, such that only the astronomical component remains. \\\hline
+camera & An imaging device mounted at a telescope focal plane, composed of optics, a shutter, a set of filters, and one or more sensors arranged in a focal plane array. \\\hline
+configuration & A task-specific set of configuration parameters, also called a 'config'. The config is read-only; once a task is constructed, the same configuration will be used to process all data. This makes the data processing more predictable: it does not depend on the order in which items of data are processed. This is distinct from arguments or options, which are allowed to vary from one task invocation to the next. \\\hline
+epoch & Sky coordinate reference frame, e.g., J2000. Alternatively refers to a single observation (usually photometric, can be multi-band) of a variable source. \\\hline
+flux & Shorthand for radiative flux, it is a measure of the transport of radiant energy per unit area per unit time. In astronomy this is usually expressed in cgs units: erg/cm2/s. \\\hline
+footprint & See 'source footprint', 'instrumental footprint', or 'survey footprint', `Footprint` is a Python class representing a source footprint. \\\hline
+forced photometry & A measurement of the photometric properties of a source, or expected source, with one or more parameters held fixed. Most often this means fixing the location of the center of the brightness profile (which may be known or predicted in advance), and measuring other properties such as total brightness, shape, and orientation. Forced photometry will be done for all Objects in the Data Release Production. \\\hline
+metadata & General term for data about data, e.g., attributes of astronomical objects (e.g. images, sources, astroObjects, etc.) that are characteristics of the objects themselves, and facilitate the organization, preservation, and query of data sets. (E.g., a FITS header contains metadata). \\\hline
+metric & A measurable quantity which may be tracked. A metric has a name, description, unit, references, and tags (which are used for grouping). A metric is a scalar by definition. See also: aggregate metric, model metric, point metric. \\\hline
+patch & An quadrilateral sub-region of a sky tract, with a size in pixels chosen to fit easily into memory on desktop computers. \\\hline
+pipeline & A configured sequence of software tasks (Stages) to process data and generate data products. Example: Association Pipeline. \\\hline
+provenance & Information about how LSST images, Sources, and Objects were created (e.g., versions of pipelines, algorithmic components, or templates) and how to recreate them. \\\hline
+seeing & An astronomical term for characterizing the stability of the atmosphere, as measured by the width of the point-spread function on images. The PSF width is also affected by a number of other factors, including the airmass, passband, and the telescope and camera optics. \\\hline
+stack & A record of all versions of a document uploaded to a particular DocuShare handle \\\hline
+tract & A portion of sky, a spherical convex polygon, within the LSST all-sky tessellation (sky map). Each tract is subdivided into sky patches. \\\hline
+transient & A transient source is one that has been detected on a difference image, but has not been associated with either an astronomical object or a solar system body. \\\hline
+\end{longtable}
