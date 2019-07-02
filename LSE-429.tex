@@ -437,17 +437,14 @@ sampling different Galactic latitudes) and should be observed under a
 range of environmental conditions, including a range of airmass and sky
 brightness. (WHAT RANGE?) The target fields should include
 spectrophotometric standards such as DA white dwarfs to be used to
-evaluate the absolute photometric calibration (HOW MANY?)\\
-~\\
-The ~pointings in each field will be dithered to allow tests of
-delivered image quality, throughput, calibration, and astrometry across
-the full field of view. Photometric conditions are required.\\
-~\\
-Sub-percent Photometry: Faint DA White Dwarf Spectrophotometric
-Standards for Astrophysical Observatories\\
-\url{https://arxiv.org/abs/1811.12534}~\\
-~\\
-\textbf{Example observations:}\\
+evaluate the absolute photometric calibration (HOW
+MANY?)\\[2\baselineskip]The ~pointings in each field will be dithered to
+allow tests of delivered image quality, throughput, calibration, and
+astrometry across the full field of view. Photometric conditions are
+required.\\[2\baselineskip]Sub-percent Photometry: Faint DA White Dwarf
+Spectrophotometric Standards for Astrophysical Observatories\\
+\url{https://arxiv.org/abs/1811.12534}\\[2\baselineskip]\textbf{Example
+observations:}\\
 20 fields x 5 visits x 6 filters x 5 epochs = 20 fields x 25 visits x 6
 filters.
 
@@ -2494,14 +2491,10 @@ measured in step 4.
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Verify that the residual PSF size at each airmass does not exceed the
-following limits:\\
-~\\
-0.4 arcseconds at airmass=1\\
+following limits:\\[2\baselineskip]0.4 arcseconds at airmass=1\\
 0.49 arcseconds at airmass=1.4\\
-0.6 arcseconds at airmass=2\\
-~\\
-so that the system contribution to PSF width degrades no more rapidly
-than airmass\^{}0.6
+0.6 arcseconds at airmass=2\\[2\baselineskip]so that the system
+contribution to PSF width degrades no more rapidly than airmass\^{}0.6
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -2803,10 +2796,9 @@ unresolved point sources brighter than some threshold (17th magnitude?).
 
       \begin{minipage}[t]{13cm}{\footnotesize
       For each full-focal plane exposure, verify that the median PSF
-ellipticity of the sources from step 3 is less than or equal to 0.04.\\
-~\\
-Verify that no more than 5\% of the sources from step 3 have PSF
-ellipticity greater than 0.07.
+ellipticity of the sources from step 3 is less than or equal to
+0.04.\\[2\baselineskip]Verify that no more than 5\% of the sources from
+step 3 have PSF ellipticity greater than 0.07.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -3749,10 +3741,9 @@ exposures.
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Identify sources brighter than the saturation limits calculated in step
-1 in external catalogs.\\
-~\\
-This will probably involve fitting the stars to an SED so that we can
-extrapolate their magnitudes in LSST bands as needed.
+1 in external catalogs.\\[2\baselineskip]This will probably involve
+fitting the stars to an SED so that we can extrapolate their magnitudes
+in LSST bands as needed.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -3905,10 +3896,9 @@ together span a range of source densities. Each field should be observed
 in multiple epochsdistributed over at least 3 consecutive nights and
 cover a range of airmasses. Dithered pointings will be used to
 approximate the coverage pattern expected in the wide-fast-deep
-survey.\\
-~\\
-Estimated ~observing time = 34 seconds * 200 visits * 2 filters * 3
-(dither pattern) * 3 fields = \textasciitilde{}36hrs.
+survey.\\[2\baselineskip]Estimated ~observing time = 34 seconds * 200
+visits * 2 filters * 3 (dither pattern) * 3 fields =
+\textasciitilde{}36hrs.
 
 
     {\bf Preconditions}:\\
@@ -4287,7 +4277,7 @@ are real and which are artifacts.
       & Expected Result & 
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      Catalog of DIASources labeled as either 'real' or 'bogus'.
+      Catalog of DIASources labeled as either `real' or `bogus'.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -4670,7 +4660,7 @@ Characterization of width of flux measurements for each source
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Perform Level 1 processing on images from step 1. ~Keep difference
-images for "forced DIA photometry" in later steps.
+images for ``forced DIA photometry'' in later steps.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -4980,9 +4970,8 @@ test case in Jira.
       1 & Description &
 
       \begin{minipage}[t]{13cm}{\footnotesize
-      Upon completion of mini-survey, select all exposures taken at or near\\
-~\\
-band = r\\
+      Upon completion of mini-survey, select all exposures taken at or
+near\\[2\baselineskip]band = r\\
 airmass = 1\\
 seeing = 0.7 arcsecond\\
 sky brightness = 21 magnitudes per square arcsecond
@@ -5960,8 +5949,8 @@ mode\\
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Verify that time of exposure start/end, site metadata, telescope
-metadata, and camera metadata are stored in DMS system.\\
-~\\
+metadata, and camera metadata are stored in DMS
+system.\\[2\baselineskip]
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -6524,13 +6513,10 @@ and the interpolated PSF ellipticity.
       \begin{minipage}[t]{13cm}{\footnotesize
       For each of the stars used to calculate the PSF, calculate the e1 and e2
 parameters specified in equations (10) and (11) of the Science
-Requirements Document.\\
-~\\
-Calculate e1 and e2 for the PSF as calculated from the interpolation
-function.\\
-~\\
-Subtract the measured e1 and e2 from the interpolated e1 and e2 to get
-the residuals delta\_e1, delta\_e2.
+Requirements Document.\\[2\baselineskip]Calculate e1 and e2 for the PSF
+as calculated from the interpolation function.\\[2\baselineskip]Subtract
+the measured e1 and e2 from the interpolated e1 and e2 to get the
+residuals delta\_e1, delta\_e2.
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -6560,21 +6546,15 @@ the residuals delta\_e1, delta\_e2.
       \begin{minipage}[t]{13cm}{\footnotesize
       Calculate the correlation between pairs of sources of the PSF
 ellipticity residuals from step 4 as a function of separation angle
-between sources.\\
-~\\
-Verify that:\\
-~\\
-1) The median PSF ellipticity correlations on 1 arcminute scales is less
-than 2.0e-5 (on both E1 and E2)\\
-~\\
-2) The median PSF ellipticity correlations on 5 arcminutes scales is
-less than 1.0e-7\\
-~\\
-3) No more than 15\% of source pairs at 1 arcminute scales have PSF
-ellipticity correlations that exceed 4.0e-5 (on both E1 and E2)\\
-~\\
-4) No more than 15\% of source pairs at 5 arcminute scales have PSF
-ellipticity correlations greater than 2.0e-7
+between sources.\\[2\baselineskip]Verify that:\\[2\baselineskip]1) The
+median PSF ellipticity correlations on 1 arcminute scales is less than
+2.0e-5 (on both E1 and E2)\\[2\baselineskip]2) The median PSF
+ellipticity correlations on 5 arcminutes scales is less than
+1.0e-7\\[2\baselineskip]3) No more than 15\% of source pairs at 1
+arcminute scales have PSF ellipticity correlations that exceed 4.0e-5
+(on both E1 and E2)\\[2\baselineskip]4) No more than 15\% of source
+pairs at 5 arcminute scales have PSF ellipticity correlations greater
+than 2.0e-7
 
       \vspace{\dp0}
       } \end{minipage} \\
@@ -6627,9 +6607,8 @@ production on too many images
 
       \begin{minipage}[t]{13cm}{\footnotesize
       Perform a mini-survey using a realistic scheduling algorithm. ~Run the
-images through the full alert-production pipeline.\\
-~\\
-Log all images taken by the camera and all alerts generated.
+images through the full alert-production pipeline.\\[2\baselineskip]Log
+all images taken by the camera and all alerts generated.
 
       \vspace{\dp0}
       } \end{minipage} \\
