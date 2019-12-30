@@ -15,8 +15,12 @@ ifneq "$(GITSTATUS)" ""
 endif
 
 #Traditional acronyms are better in this document, instead of glossary
-$(DOCNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
-	latexmk -bibtex -xelatex -f $(DOCNAME).tex
+$(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
+	xelatex -jobname=$(JOBNAME) $(DOCNAME)
+	bibtex $(JOBNAME)
+	xelatex -jobname=$(JOBNAME) $(DOCNAME)
+	xelatex -jobname=$(JOBNAME) $(DOCNAME)
+	xelatex -jobname=$(JOBNAME) $(DOCNAME)
 
 .FORCE:
 
@@ -39,3 +43,6 @@ myacronyms.txt :
 
 skipacronyms.txt :
 	touch skipacronyms.txt
+
+clean :
+	rm -f *.pdf *.nav *.bbl *.xdv *.snm *.out *.toc *.blg *.fls
