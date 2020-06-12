@@ -3,9 +3,14 @@
 \usepackage{longtable,booktabs}
 \usepackage{enumitem}
 \usepackage{arydshln}
+\usepackage{attachfile}
+\usepackage{array}
+
+\newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}p{#1}}
 
 \input meta.tex
 
+\newcommand{\attachmentsUrl}{https://github.com/\gitorg/\lsstDocType-\lsstDocNum/blob/\gitref/attachments}
 \providecommand{\tightlist}{
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 
@@ -13,24 +18,23 @@
 
 \begin{document}
 
-\def\milestoneName{Commissioning Sv: Single-Visit And Full-Survey Performance W/ Comcam}
-\def\milestoneId{LVV-P2}
+\def\milestoneName{Single-visit and Full-survey Performance w/ ComCam}
+\def\milestoneId{Commissioning SV}
 \def\product{Commissioning Science Verification}
 
 \setDocCompact{true}
 
-\title{ LVV-P2 Commissioning Sv: Single-Visit And Full-Survey Performance W/ Comcam Test Plan and Report}
+\title{Commissioning SV: Single-visit and Full-survey Performance w/ ComCam Test Plan and Report}
 \setDocRef{\lsstDocType-\lsstDocNum}
 \date{\vcsdate}
-\setDocUpstreamLocation{\url{https://github.com/lsst/lsst-texmf/examples}}
 \author{ Keith Bechtol }
 
-\input history_and_info.tex
+\input{history_and_info.tex}
 
 
 \setDocAbstract{
-This is the test plan and report for LVV-P2 (Commissioning Sv: Single-Visit And Full-Survey Performance W/ Comcam),
-an LSST level 2 milestone pertaining to the Data Management Subsystem.
+This is the test plan and report for Commissioning SV (Single-visit and Full-survey Performance w/ ComCam),
+an LSST milestone pertaining to the Data Management Subsystem.
 }
 
 
@@ -60,34 +64,37 @@ observations.
 \subsection{Document Overview}
 \label{sect:docoverview}
 
-This document was generated from Jira, obtaining the relevant information from the 
-\href{https://jira.lsstcorp.org/secure/Tests.jspa#/testPlan/LVV-P2}{LVV-P2}
+This document was generated from Jira, obtaining the relevant information from the
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P2}{LVV-P2}
 ~Jira Test Plan and related Test Cycles (
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C4}{LVV-C4}
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C5}{LVV-C5}
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C36}{LVV-C36}
-  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCycle/LVV-C37}{LVV-C37}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C4}{LVV-C4}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C5}{LVV-C5}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C36}{LVV-C36}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C37}{LVV-C37}
 ).
 
 Section \ref{sect:intro} provides an overview of the test campaign, the system under test (\product{}),
 the applicable documentation, and explains how this document is organized.
-Section \ref{sect:configuration}  describes the configuration used for this test.
+Section \ref{sect:testplan} provides additional information about the test plan, like for example the configuration
+used for this test or related documentation.
 Section \ref{sect:personnel} describes the necessary roles and lists the individuals assigned to them.
-%Section \ref{sect:plannedtestactivities} provides the list of planned test cycles and test cases,
-including all relevant information that fully describes the test campaign.
 
 Section \ref{sect:overview} provides a summary of the test results, including an overview in Table \ref{table:summary},
 an overall assessment statement and suggestions for possible improvements.
 Section \ref{sect:detailedtestresults} provides detailed results for each step in each test case.
 
-The current status of test plan LVV-P2 in Jira is \textbf{ Draft }.
+The current status of test plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P2}{LVV-P2} in Jira is \textbf{ Draft }.
 
 \subsection{References}
 \label{sect:references}
 \renewcommand{\refname}{}
-\bibliography{lsst,refs,books,refs_ads}
-\section{Test Configuration}
-\label{sect:configuration}
+\bibliography{lsst,refs,books,refs_ads,local}
+
+
+\newpage
+\section{Test Plan Details}
+\label{sect:testplan}
+
 
 \subsection{Data Collection}
 
@@ -102,22 +109,42 @@ sustained on-sky observing.
 
 
 
+\subsection{Related Documentation}
+
+The documentation related to this test campaign should be provided in the following DocuShare Collection
+(as per Verification Artifacts in Jira test plan LVV-P2).
+
+\begin{itemize}
+\item DocuShare Collection Not Specified
+\end{itemize}
+
+
+
+\subsection{PMCS Activity}
+
+Primavera milestones related to the test campaign.
+
+\begin{itemize}
+\item None
+\end{itemize}
+
+
 \newpage
 \section{Personnel}
 \label{sect:personnel}
 
-The personnel involved in the test campaign are shown in the following table.
+The personnel involved in the test campaign is shown in the following table.
 
+{\small
 \begin{longtable}{p{3cm}p{3cm}p{3cm}p{6cm}}
 \hline
-\multicolumn{2}{r}{Test Plan (LVV-P2) owner:} &
+\multicolumn{2}{r}{T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P2}{LVV-P2} owner:} &
 \multicolumn{2}{l}{\textbf{ Keith Bechtol } }\\\hline
-\multicolumn{2}{r}{ LVV-C4 owner:} &
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C4}{LVV-C4} owner:} &
 \multicolumn{2}{l}{\textbf{
-    Undefined
-}
+Undefined }
 } \\\hline
-\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T293}{LVV-T293}
 & {\small Keith Bechtol } & {\small Keith Bechtol } &
 \begin{minipage}[]{6cm}
@@ -318,12 +345,11 @@ The personnel involved in the test campaign are shown in the following table.
 \medskip
 \end{minipage}
 \\ \hline
-\multicolumn{2}{r}{ LVV-C5 owner:} &
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C5}{LVV-C5} owner:} &
 \multicolumn{2}{l}{\textbf{
-    Undefined
-}
+Undefined }
 } \\\hline
-\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T986}{LVV-T986}
 & {\small Scott Daniel } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -508,12 +534,11 @@ The personnel involved in the test campaign are shown in the following table.
 \medskip
 \end{minipage}
 \\ \hline
-\multicolumn{2}{r}{ LVV-C36 owner:} &
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C36}{LVV-C36} owner:} &
 \multicolumn{2}{l}{\textbf{
-    Undefined
-}
+Undefined }
 } \\\hline
-\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1071}{LVV-T1071}
 & {\small Keith Bechtol } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -522,12 +547,11 @@ The personnel involved in the test campaign are shown in the following table.
 \medskip
 \end{minipage}
 \\ \hline
-\multicolumn{2}{r}{ LVV-C37 owner:} &
+\multicolumn{2}{r}{T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C37}{LVV-C37} owner:} &
 \multicolumn{2}{l}{\textbf{
-    Undefined
-}
+Undefined }
 } \\\hline
-\textbf{Test Case} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
+\textbf{Test Cases} & \textbf{Assigned to} & \textbf{Executed by} & \textbf{Additional Test Personnel} \\ \hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T965}{LVV-T965}
 & {\small Scott Daniel } & {\small  } &
 \begin{minipage}[]{6cm}
@@ -553,6 +577,7 @@ The personnel involved in the test campaign are shown in the following table.
 \end{minipage}
 \\ \hline
 \end{longtable}
+}
 
 \newpage
 
@@ -562,500 +587,547 @@ The personnel involved in the test campaign are shown in the following table.
 \subsection{Summary}
 \label{sect:summarytable}
 
-\begin{longtable}{p{2cm}p{2.5cm}p{9cm}p{2.5cm}}
+{\small
+\begin{longtable}{p{2cm}cp{2.3cm}p{8.6cm}p{2.3cm}}
 \toprule
-\multicolumn{3}{p{13.5cm}}{ Test Plan {\bf LVV-P2: Commissioning SV: Single-visit and Full-survey Performance w/ ComCam }} & Draft \\\hline
-
-  \multicolumn{3}{p{13.5cm}}{ Test Cycle {\bf LVV-C4: Commissioning SV: Single-visit Performance w/ ComCam }} & Not Executed \\\hline
-
-  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
-
+\multicolumn{2}{r}{ T. Plan \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testPlan/LVV-P2}{LVV-P2}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Commissioning SV: Single-visit and Full-survey Performance w/ ComCam }} & Draft \\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C4}{LVV-C4}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Commissioning SV: Single-visit Performance w/ ComCam }} & Not Executed \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T293}{LVV-T293}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T295}{LVV-T295}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T961}{LVV-T961}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T959}{LVV-T959}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T960}{LVV-T960}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T956}{LVV-T956}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T957}{LVV-T957}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T595}{LVV-T595}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T594}{LVV-T594}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T593}{LVV-T593}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T592}{LVV-T592}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T591}{LVV-T591}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T590}{LVV-T590}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T589}{LVV-T589}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T588}{LVV-T588}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T587}{LVV-T587}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T554}{LVV-T554}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T548}{LVV-T548}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T545}{LVV-T545}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T389}{LVV-T389}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T390}{LVV-T390}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T297}{LVV-T297}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T298}{LVV-T298}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T299}{LVV-T299}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T360}{LVV-T360}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
 
-  \multicolumn{3}{p{13.5cm}}{ Test Cycle {\bf LVV-C5: Commissioning SV: Full-survey Performance w/ ComCam }} & Not Executed \\\hline
-
-  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
-
+\medskip
+\end{minipage}
+&
+\\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C5}{LVV-C5}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Commissioning SV: Full-survey Performance w/ ComCam }} & Not Executed \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T986}{LVV-T986}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T969}{LVV-T969}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T968}{LVV-T968}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T176}{LVV-T176}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T966}{LVV-T966}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T963}{LVV-T963}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T962}{LVV-T962}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T950}{LVV-T950}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T943}{LVV-T943}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T942}{LVV-T942}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T941}{LVV-T941}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T939}{LVV-T939}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T940}{LVV-T940}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T938}{LVV-T938}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T597}{LVV-T597}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T596}{LVV-T596}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T549}{LVV-T549}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T547}{LVV-T547}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T544}{LVV-T544}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T532}{LVV-T532}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T533}{LVV-T533}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T294}{LVV-T294}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T296}{LVV-T296}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
 
-  \multicolumn{3}{p{13.5cm}}{ Test Cycle {\bf LVV-C36: Commissioning SV: 20-year Depth w/ ComCam }} & Not Executed \\\hline
-
-  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
-
+\medskip
+\end{minipage}
+&
+\\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C36}{LVV-C36}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Commissioning SV: 20-year Depth w/ ComCam }} & Not Executed \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1071}{LVV-T1071}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
 
-  \multicolumn{3}{p{13.5cm}}{ Test Cycle {\bf LVV-C37: Commissioning SV: Scheduler Testing w/ ComCam }} & Not Executed \\\hline
-
-  {\bf \footnotesize test case} & {\bf \footnotesize status} & {\bf \footnotesize comment} & {\bf \footnotesize issues} \\\toprule
-
+\medskip
+\end{minipage}
+&
+\\\hline
+\multicolumn{2}{r}{ T. Cycle \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCycle/LVV-C37}{LVV-C37}:} &
+\multicolumn{2}{p{10.9cm}}{\textbf{ Commissioning SV: Scheduler Testing w/ ComCam }} & Not Executed \\\hline
+\textbf{Test Cases} &  \textbf{Ver.} & \textbf{Status} & \textbf{Comment} & \textbf{Issues} \\\toprule
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T965}{LVV-T965}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T964}{LVV-T964}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T967}{LVV-T967}
-    & Not Executed &
-    \begin{minipage}[]{9cm}
-    \smallskip
-    
-    \medskip
-    \end{minipage}
-    &
-    \\\hline
+&  1
+& Not Executed &
+\begin{minipage}[]{9cm}
+\smallskip
+
+\medskip
+\end{minipage}
+&
+\\\hline
 \caption{Test Campaign Summary}
 \label{table:summary}
 \end{longtable}
+}
 
 \subsection{Overall Assessment}
 \label{sect:overallassessment}
@@ -1075,7 +1147,7 @@ Not yet available.
 
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C4}{Commissioning SV: Single-visit Performance w/ ComCam}} in Jira.
 
-Commissioning SV: Single-visit Performance w/ ComCam\\
+Test Cycle name: Commissioning SV: Single-visit Performance w/ ComCam\\
 Status: Not Executed
 
 Initial verification of the single-visit performance of ComCam with
@@ -1118,8 +1190,9 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C4 Test Cycle}
 
-\paragraph{Test Case LVV-T293 - On-sky Observations: Single-visit Key Performance Metrics }\mbox{}\\
+\paragraph{ LVV-T293 - On-sky Observations: Single-visit Key Performance Metrics }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T293}{\textit{ LVV-T293 } }
 test case in Jira.
 
@@ -1180,8 +1253,9 @@ Detailed steps results:
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T295 - Data Processing Campaign: Single-visit Key Performance Metrics }\mbox{}\\
+\paragraph{ LVV-T295 - Data Processing Campaign: Single-visit Key Performance Metrics }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T295}{\textit{ LVV-T295 } }
 test case in Jira.
 
@@ -1225,8 +1299,9 @@ Detailed steps results:
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T961 - Bright source measurement }\mbox{}\\
+\paragraph{ LVV-T961 - Bright source measurement }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T961}{\textit{ LVV-T961 } }
 test case in Jira.
 
@@ -1409,8 +1484,9 @@ External catalog used in step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T959 - Inter-band astrometric consistency }\mbox{}\\
+\paragraph{ LVV-T959 - Inter-band astrometric consistency }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T959}{\textit{ LVV-T959 } }
 test case in Jira.
 
@@ -1584,8 +1660,9 @@ Source separations from step 3
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T960 - Relative astrometric performance (w/ Gaia) }\mbox{}\\
+\paragraph{ LVV-T960 - Relative astrometric performance (w/ Gaia) }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T960}{\textit{ LVV-T960 } }
 test case in Jira.
 
@@ -1921,8 +1998,9 @@ Source separation errors from step 4
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T956 - Ghost area characterization }\mbox{}\\
+\paragraph{ LVV-T956 - Ghost area characterization }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T956}{\textit{ LVV-T956 } }
 test case in Jira.
 
@@ -2064,8 +2142,9 @@ No more than 10\% of the image area is affected by ghosts that exceed
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T957 - Ghost effect on photometric repeatability }\mbox{}\\
+\paragraph{ LVV-T957 - Ghost effect on photometric repeatability }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T957}{\textit{ LVV-T957 } }
 test case in Jira.
 
@@ -2298,8 +2377,9 @@ Photometric measurements from step 3
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T595 - PSF ellipticity }\mbox{}\\
+\paragraph{ LVV-T595 - PSF ellipticity }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T595}{\textit{ LVV-T595 } }
 test case in Jira.
 
@@ -2443,8 +2523,9 @@ PSF ellipticity distributions from step 3.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T594 - Image quality - degradation from zenith }\mbox{}\\
+\paragraph{ LVV-T594 - Image quality - degradation from zenith }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T594}{\textit{ LVV-T594 } }
 test case in Jira.
 
@@ -2645,8 +2726,9 @@ contribution to PSF width degrades no more rapidly than airmass\^{}0.6
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T593 - Image quality at zenith }\mbox{}\\
+\paragraph{ LVV-T593 - Image quality at zenith }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T593}{\textit{ LVV-T593 } }
 test case in Jira.
 
@@ -2812,8 +2894,9 @@ Verify that residual PSF size does not exceed 0.4 arcseconds
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T592 - Image quality - maximum system contribution }\mbox{}\\
+\paragraph{ LVV-T592 - Image quality - maximum system contribution }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T592}{\textit{ LVV-T592 } }
 test case in Jira.
 
@@ -2980,8 +3063,9 @@ LSST system, is no more than 15\% of total PSF size.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T591 - Flux-enclosing radius }\mbox{}\\
+\paragraph{ LVV-T591 - Flux-enclosing radius }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T591}{\textit{ LVV-T591 } }
 test case in Jira.
 
@@ -3126,8 +3210,9 @@ Sources from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T590 - Median image quality at 0.8 arcsecond seeing }\mbox{}\\
+\paragraph{ LVV-T590 - Median image quality at 0.8 arcsecond seeing }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T590}{\textit{ LVV-T590 } }
 test case in Jira.
 
@@ -3228,8 +3313,9 @@ Verify that median of PSF FWHM is approximately 0.89 arcsecond
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T589 - Median image quality at 0.6 arcsecond seeing }\mbox{}\\
+\paragraph{ LVV-T589 - Median image quality at 0.6 arcsecond seeing }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T589}{\textit{ LVV-T589 } }
 test case in Jira.
 
@@ -3337,8 +3423,9 @@ Source catalog from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T588 - Median image quality at 0.44 arcsecond seeing }\mbox{}\\
+\paragraph{ LVV-T588 - Median image quality at 0.44 arcsecond seeing }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T588}{\textit{ LVV-T588 } }
 test case in Jira.
 
@@ -3447,8 +3534,9 @@ Source catalog from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T587 - PSF size in pixels }\mbox{}\\
+\paragraph{ LVV-T587 - PSF size in pixels }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T587}{\textit{ LVV-T587 } }
 test case in Jira.
 
@@ -3556,8 +3644,9 @@ source catalog from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T554 - Single exposure dynamic range }\mbox{}\\
+\paragraph{ LVV-T554 - Single exposure dynamic range }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T554}{\textit{ LVV-T554 } }
 test case in Jira.
 
@@ -3674,8 +3763,9 @@ List of detected sources from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T548 - Photometric errors -- level 1 processing -- reference catalog }\mbox{}\\
+\paragraph{ LVV-T548 - Photometric errors -- level 1 processing -- reference catalog }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T548}{\textit{ LVV-T548 } }
 test case in Jira.
 
@@ -3880,8 +3970,9 @@ Forced difference image photometry from step 4
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T545 - Astrometric error -- level 1 processing -- reference catalog }\mbox{}\\
+\paragraph{ LVV-T545 - Astrometric error -- level 1 processing -- reference catalog }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T545}{\textit{ LVV-T545 } }
 test case in Jira.
 
@@ -4084,8 +4175,9 @@ Model of astrometric errors from step 4
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T389 - Single Visit Photometric Repeatability }\mbox{}\\
+\paragraph{ LVV-T389 - Single Visit Photometric Repeatability }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T389}{\textit{ LVV-T389 } }
 test case in Jira.
 
@@ -4278,8 +4370,9 @@ by more than PA2 from step 3
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T390 - The spatial uniformity of photometric zeropoints }\mbox{}\\
+\paragraph{ LVV-T390 - The spatial uniformity of photometric zeropoints }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T390}{\textit{ LVV-T390 } }
 test case in Jira.
 
@@ -4412,8 +4505,9 @@ Check that no more than PF2 percent (10\%) of the zero points exceed PF4
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T297 - Absolute Astrometric Performance }\mbox{}\\
+\paragraph{ LVV-T297 - Absolute Astrometric Performance }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T297}{\textit{ LVV-T297 } }
 test case in Jira.
 
@@ -4457,8 +4551,9 @@ Detailed steps results:
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T298 - Cross-band Astrometric Performance }\mbox{}\\
+\paragraph{ LVV-T298 - Cross-band Astrometric Performance }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T298}{\textit{ LVV-T298 } }
 test case in Jira.
 
@@ -4502,8 +4597,9 @@ Detailed steps results:
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T299 - Relative Astrometric Performance }\mbox{}\\
+\paragraph{ LVV-T299 - Relative Astrometric Performance }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T299}{\textit{ LVV-T299 } }
 test case in Jira.
 
@@ -4547,8 +4643,9 @@ Detailed steps results:
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T360 - Off Zenith Image Quality Degradation }\mbox{}\\
+\paragraph{ LVV-T360 - Off Zenith Image Quality Degradation }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T360}{\textit{ LVV-T360 } }
 test case in Jira.
 
@@ -4596,7 +4693,7 @@ Detailed steps results:
 
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C5}{Commissioning SV: Full-survey Performance w/ ComCam}} in Jira.
 
-Commissioning SV: Full-survey Performance w/ ComCam\\
+Test Cycle name: Commissioning SV: Full-survey Performance w/ ComCam\\
 Status: Not Executed
 
 
@@ -4609,8 +4706,9 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C5 Test Cycle}
 
-\paragraph{Test Case LVV-T986 - MOPS -- orbit association at catalog level }\mbox{}\\
+\paragraph{ LVV-T986 - MOPS -- orbit association at catalog level }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T986}{\textit{ LVV-T986 } }
 test case in Jira.
 
@@ -4783,8 +4881,9 @@ Plot fraction of recovered asteroids as a function of limiting magnitude
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T969 - Alert completeness }\mbox{}\\
+\paragraph{ LVV-T969 - Alert completeness }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T969}{\textit{ LVV-T969 } }
 test case in Jira.
 
@@ -4907,8 +5006,9 @@ up to 10,000 alerts per image.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T968 - WCS measurement and reporting }\mbox{}\\
+\paragraph{ LVV-T968 - WCS measurement and reporting }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T968}{\textit{ LVV-T968 } }
 test case in Jira.
 
@@ -4984,8 +5084,9 @@ less than 0.2 arcseconds.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T176 - Verify implementation of Infrastructure Sizing for ``catching up'' }\mbox{}\\
+\paragraph{ LVV-T176 - Verify implementation of Infrastructure Sizing for ``catching up'' }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T176}{\textit{ LVV-T176 } }
 test case in Jira.
 
@@ -5035,8 +5136,9 @@ failure, observe data products generated in time
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T966 - Image storing during outage }\mbox{}\\
+\paragraph{ LVV-T966 - Image storing during outage }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T966}{\textit{ LVV-T966 } }
 test case in Jira.
 
@@ -5085,8 +5187,9 @@ cache of images.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T963 - Alert generation reliability }\mbox{}\\
+\paragraph{ LVV-T963 - Alert generation reliability }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T963}{\textit{ LVV-T963 } }
 test case in Jira.
 
@@ -5196,8 +5299,9 @@ List of images and alerts from step 1
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T962 - PSF ellipticity correlations }\mbox{}\\
+\paragraph{ LVV-T962 - PSF ellipticity correlations }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T962}{\textit{ LVV-T962 } }
 test case in Jira.
 
@@ -5391,8 +5495,9 @@ PSF ellipticity residual distributions from step 4
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T950 - DIASource misassociation rate }\mbox{}\\
+\paragraph{ LVV-T950 - DIASource misassociation rate }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T950}{\textit{ LVV-T950 } }
 test case in Jira.
 
@@ -5536,8 +5641,9 @@ DIASources and DIAObjects from step 3
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T943 - Provenance in Level 1 catalogs }\mbox{}\\
+\paragraph{ LVV-T943 - Provenance in Level 1 catalogs }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T943}{\textit{ LVV-T943 } }
 test case in Jira.
 
@@ -5787,8 +5893,9 @@ catalogs from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T942 - Provenance on Level 2 catalogs }\mbox{}\\
+\paragraph{ LVV-T942 - Provenance on Level 2 catalogs }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T942}{\textit{ LVV-T942 } }
 test case in Jira.
 
@@ -5991,8 +6098,9 @@ step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T941 - Level 1 reproducibility (different computer hardware) }\mbox{}\\
+\paragraph{ LVV-T941 - Level 1 reproducibility (different computer hardware) }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T941}{\textit{ LVV-T941 } }
 test case in Jira.
 
@@ -6110,8 +6218,9 @@ DIASource catalogs should agree to within some small tolerance
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T939 - Level 1 reproducibility (same computer hardware) }\mbox{}\\
+\paragraph{ LVV-T939 - Level 1 reproducibility (same computer hardware) }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T939}{\textit{ LVV-T939 } }
 test case in Jira.
 
@@ -6228,8 +6337,9 @@ Sets of DIASources should be identical
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T940 - Level 2 reproducibility (different computer hardware) }\mbox{}\\
+\paragraph{ LVV-T940 - Level 2 reproducibility (different computer hardware) }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T940}{\textit{ LVV-T940 } }
 test case in Jira.
 
@@ -6373,8 +6483,9 @@ Catalogs will agree to within some tolerance
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T938 - Level 2 reproducibility (same computer hardware) }\mbox{}\\
+\paragraph{ LVV-T938 - Level 2 reproducibility (same computer hardware) }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T938}{\textit{ LVV-T938 } }
 test case in Jira.
 
@@ -6518,8 +6629,9 @@ Catalogs are identical
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T597 - Depth variation over field of view }\mbox{}\\
+\paragraph{ LVV-T597 - Depth variation over field of view }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T597}{\textit{ LVV-T597 } }
 test case in Jira.
 
@@ -6658,8 +6770,9 @@ median 5-sigma limiting magnitude for the entire exposure.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T596 - Depth: r-band }\mbox{}\\
+\paragraph{ LVV-T596 - Depth: r-band }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T596}{\textit{ LVV-T596 } }
 test case in Jira.
 
@@ -6834,8 +6947,9 @@ Distribution of 5-sigma limiting magnitudes from step 3
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T549 - Zeropoint consistency }\mbox{}\\
+\paragraph{ LVV-T549 - Zeropoint consistency }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T549}{\textit{ LVV-T549 } }
 test case in Jira.
 
@@ -6978,8 +7092,9 @@ Calibrated images from step 3
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T547 - Photometric errors -- level 1 processing -- on-sky data }\mbox{}\\
+\paragraph{ LVV-T547 - Photometric errors -- level 1 processing -- on-sky data }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T547}{\textit{ LVV-T547 } }
 test case in Jira.
 
@@ -7227,8 +7342,9 @@ Intrinsic width of flux measurements from step 2
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T544 - Astrometric error -- level 1 processing -- on-sky data }\mbox{}\\
+\paragraph{ LVV-T544 - Astrometric error -- level 1 processing -- on-sky data }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T544}{\textit{ LVV-T544 } }
 test case in Jira.
 
@@ -7435,8 +7551,9 @@ Model of errors due just to observing conditions from step 4
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T532 - MOPS completeness threshold }\mbox{}\\
+\paragraph{ LVV-T532 - MOPS completeness threshold }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T532}{\textit{ LVV-T532 } }
 test case in Jira.
 
@@ -7631,8 +7748,9 @@ Compare to analysis of purity as a function of spuriousness metric
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T533 - MOPS purity threshold }\mbox{}\\
+\paragraph{ LVV-T533 - MOPS purity threshold }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T533}{\textit{ LVV-T533 } }
 test case in Jira.
 
@@ -7838,8 +7956,9 @@ Compare to completeness threshold in spuriousness metric.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T294 - On-sky Observations: Full-survey Key Performance Metrics }\mbox{}\\
+\paragraph{ LVV-T294 - On-sky Observations: Full-survey Key Performance Metrics }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T294}{\textit{ LVV-T294 } }
 test case in Jira.
 
@@ -7895,8 +8014,9 @@ Detailed steps results:
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T296 - Data Processing Campaign: Full-survey Key Performance Metrics }\mbox{}\\
+\paragraph{ LVV-T296 - Data Processing Campaign: Full-survey Key Performance Metrics }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T296}{\textit{ LVV-T296 } }
 test case in Jira.
 
@@ -7944,7 +8064,7 @@ Detailed steps results:
 
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C36}{Commissioning SV: 20-year Depth w/ ComCam}} in Jira.
 
-Commissioning SV: 20-year Depth w/ ComCam\\
+Test Cycle name: Commissioning SV: 20-year Depth w/ ComCam\\
 Status: Not Executed
 
 
@@ -7957,8 +8077,9 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C36 Test Cycle}
 
-\paragraph{Test Case LVV-T1071 - On-sky Observations: 20-year Depth Test }\mbox{}\\
+\paragraph{ LVV-T1071 - On-sky Observations: 20-year Depth Test }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T1071}{\textit{ LVV-T1071 } }
 test case in Jira.
 
@@ -8006,7 +8127,7 @@ Detailed steps results:
 
 Open test cycle {\it \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testrun/LVV-C37}{Commissioning SV: Scheduler Testing w/ ComCam}} in Jira.
 
-Commissioning SV: Scheduler Testing w/ ComCam\\
+Test Cycle name: Commissioning SV: Scheduler Testing w/ ComCam\\
 Status: Not Executed
 
 
@@ -8019,8 +8140,9 @@ Not provided.
 
 \subsubsection{Test Cases in LVV-C37 Test Cycle}
 
-\paragraph{Test Case LVV-T965 - Sub-system health during communication outage }\mbox{}\\
+\paragraph{ LVV-T965 - Sub-system health during communication outage }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T965}{\textit{ LVV-T965 } }
 test case in Jira.
 
@@ -8093,8 +8215,9 @@ OSS-REQ-0065 continues to operate while communication is down.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T964 - Quick look during outage }\mbox{}\\
+\paragraph{ LVV-T964 - Quick look during outage }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T964}{\textit{ LVV-T964 } }
 test case in Jira.
 
@@ -8167,8 +8290,9 @@ continues to operate, even in the absence of communications.
 
 \end{longtable}
 
-\paragraph{Test Case LVV-T967 - Scheduler functioning during communication outage }\mbox{}\\
+\paragraph{ LVV-T967 - Scheduler functioning during communication outage }\mbox{}\\
 
+Version \textbf{1}.
 Open  \href{https://jira.lsstcorp.org/secure/Tests.jspa#/testCase/LVV-T967}{\textit{ LVV-T967 } }
 test case in Jira.
 
