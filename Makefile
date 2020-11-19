@@ -16,7 +16,7 @@ endif
 
 #Traditional acronyms are better in this document, instead of glossary
 $(JOBNAME).pdf: $(DOCNAME).tex meta.tex acronyms.tex
-	xelatex -jobname=$(JOBNAME) $(DOCNAME)
+	xelatex -jobname=$(JOBNAME) $(DOCNAME) acronyms.tex
 	bibtex $(JOBNAME)
 	xelatex -jobname=$(JOBNAME) $(DOCNAME)
 	xelatex -jobname=$(JOBNAME) $(DOCNAME)
